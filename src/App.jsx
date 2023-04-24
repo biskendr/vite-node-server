@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 const api_key = import.meta.env.VITE_API_KEY;
+const port = import.meta.env.VITE_PORT || 3001;
 
 function App() {
   const [city, setCity] = useState();
@@ -16,7 +17,7 @@ function App() {
   
   // sunucuda yapılan istek
   useEffect(() => {
-    fetch('http://localhost:3000/api/weather')
+    fetch(`http://localhost:${port}/api/weather`)
       .then((response) => response.json())
       .then((data) => setCity(data.location));
   }, []);
