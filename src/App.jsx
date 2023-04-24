@@ -6,10 +6,19 @@ const api_key = import.meta.env.VITE_API_KEY;
 function App() {
   const [city, setCity] = useState();
 
-  useEffect(() => {
+  // istemcide yapılan istek
+
+  /*useEffect(() => {
     fetch(`https://api.weatherapi.com/v1/current.json?key=${api_key}&q=Istanbul&aqi=no`)
       .then((response) => response.json())
       .then((data) => setCity(data.location));    
+  }, []);*/
+  
+  // sunucuda yapılan istek
+  useEffect(() => {
+    fetch('http://localhost:3000/api/weather')
+      .then((response) => response.json())
+      .then((data) => setCity(data.location));
   }, []);
 
   return (
