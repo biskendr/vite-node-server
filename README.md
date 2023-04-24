@@ -50,7 +50,7 @@ git checkout aafb4d8
 Son haline geri gelmek için:
 
 ```bash
-git checkout 1ff9b50
+git checkout 9672cdb
 ```
 
 komutlarını kullanabilirsiniz.
